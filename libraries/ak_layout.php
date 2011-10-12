@@ -49,10 +49,10 @@ class Ak_layout {
 	/**
 	 * Render the layout
 	 *
-	 * @param  null|string  The layout
-	 * @param  bool         If TRUE, return the output
+	 * @param  string  The layout
+	 * @param  bool    If TRUE, return the output
 	 */
-	public function render($layout = NULL, $return = FALSE)
+	public function render($layout = '', $return = FALSE)
 	{
 		// if layout is passed, use it instead of default
 		$layout = ( ! $layout) ? $this->layout : $layout;

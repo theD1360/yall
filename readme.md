@@ -9,3 +9,21 @@
 3. Do the following in `application/config/autoload.php`:
   * Add `APPPATH.'third_party/ak_layout'` to the `$autoload['packages']` array.
   * Add `'ak_layout'` to the `$autoload['libraries']` array.
+
+## Usage
+
+### set($name, $val, $encode = FALSE)
+
+More info soon...
+
+### set_global($name, $val, $encode = FALSE)
+
+More info soon...
+
+### partial($name, $view, $data = array())
+
+More info soon...
+
+### render($layout = '', $return = FALSE)
+
+More info soon...

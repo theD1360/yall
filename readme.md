@@ -35,3 +35,15 @@ Example: `$this->ak_layout->partial('main_content', 'users/login');`
 Renders and outputs the layout. You can override the default layout by setting the `$layout` parameter. If you want to return the rendered view, set `$return = TRUE`.
 
 Example: `$this->ak_layout->render();`
+
+## Other Fun Stuff
+
+Be one of the cool kids and use method chaining:
+
+```php
+$this->ak_layout->set('title', 'My Title')
+    ->set('meta_description', 'Yay for SEO!', TRUE)
+    ->set_global('my_var', 'I will be available in partials, too!')
+    ->partial('main_content', 'pages/about', array('foo' => 'bar'))
+    ->render();
+```

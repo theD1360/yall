@@ -1,5 +1,9 @@
 # AK Layout - A simple view layout library for CodeIgniter
 
+## Requirements
+
+* CodeIgniter 2.0.x
+
 ## Installation
 
 1. Download or `git clone` the files into `application/third_party/ak_layout/`.

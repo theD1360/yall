@@ -14,16 +14,24 @@
 
 ### set($name, $val, $encode = FALSE)
 
-More info soon...
+Set a variable to be used in the layout. Setting `$encode = TRUE` will pass the value through `htmlentities()`.
+
+Example: `$this->ak_layout->set('title', 'My Page Title');`
 
 ### set_global($name, $val, $encode = FALSE)
 
-More info soon...
+Set a variable to be used in the layout **and** partials. Setting `$encode = TRUE` will pass the value through `htmlentities()`.
+
+Example: `$this->ak_layout->set_global('username', 'admin');`
 
 ### partial($name, $view, $data = array())
 
-More info soon...
+Set a view to be used in the layout as a partial. `$data` is an array of variables to be sent to the view being called.
+
+Example: `$this->ak_layout->partial('main_content', 'users/login');`
 
 ### render($layout = '', $return = FALSE)
 
-More info soon...
+Renders and outputs the layout. You can override the default layout by setting the `$layout` parameter. If you want to return the rendered view, set `$return = TRUE`.
+
+Example: `$this->ak_layout->render();`

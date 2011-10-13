@@ -1,16 +1,14 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * AK Layout - A simple view layout library for CodeIgniter
+ * Y'ALL - Yet Another Layout Library for CodeIgniter 2
  *
- * @package     CodeIgniter
- * @subpackage  Libraries
- * @category    Libraries
  * @version     0.1.0
+ * @author      Visual Chefs, LLC
  * @author      Aaron Kuzemchak <aaron@kuzemchak.net>
- * @copyright   Copyright (c) 2011, Aaron Kuzemchak
+ * @license     http://www.opensource.org/licenses/mit-license.php
  */
-class Ak_layout {
+class Yall {
 	
 	/**
 	 * @var     object     CodeIgniter instance
@@ -112,4 +110,4 @@ class Ak_layout {
 	
 }
 
-/* End of file ak_layout.php */
+/* End of file yall.php */

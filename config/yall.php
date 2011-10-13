@@ -4,4 +4,4 @@ $config = array(
 	'default_layout' => 'layouts/default'
 );
 
-/* End of file ak_layout.php */
+/* End of file yall.php */

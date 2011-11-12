@@ -7,7 +7,7 @@
  *
  * @package     CodeIgniter
  * @subpackage  Libraries
- * @version     0.1.0
+ * @version     0.2.0
  * @author      Visual Chefs, LLC <hello@visualchefs.com>
  * @author      Aaron Kuzemchak <aaron@visualchefs.com>
  * @link        http://github.com/eecoder

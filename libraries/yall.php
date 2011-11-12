@@ -1,37 +1,42 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Y'ALL - Yet Another Layout Library for CodeIgniter 2
+ * Y'ALL
  *
+ * Yet Another Layout Library for CodeIgniter
+ *
+ * @package     CodeIgniter
+ * @subpackage  Libraries
  * @version     0.1.0
- * @author      Visual Chefs, LLC
- * @author      Aaron Kuzemchak <aaron@kuzemchak.net>
- * @license     http://www.opensource.org/licenses/mit-license.php
+ * @author      Visual Chefs, LLC <hello@visualchefs.com>
+ * @author      Aaron Kuzemchak <aaron@visualchefs.com>
+ * @link        http://github.com/eecoder
+ * @copyright   Copyright (c) 2011, Visual Chefs, LLC
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class Yall {
 	
 	/**
-	 * @var     object     CodeIgniter instance
+	 * @var     object
 	 * @access  protected
 	 */
 	protected $CI;
 	
 	/**
-	 * @var     array      View data
+	 * @var     array
 	 * @access  protected
 	 */
 	protected $data = array();
 	
 	/**
-	 * @var     string     Default layout
-	 * @access  protected
+	 * @var  string
 	 */
-	protected $layout = '';
+	public $layout = '';
 	
 	/**
 	 * Constructor
 	 *
-	 * @param  array  Initial configuration settings
+	 * @param  array
 	 */
 	public function __construct($config = array())
 	{
@@ -47,8 +52,9 @@ class Yall {
 	/**
 	 * Render the layout
 	 *
-	 * @param  string  The layout
-	 * @param  bool    If TRUE, return the output
+	 * @param   string
+	 * @param   bool
+	 * @return  string|void
 	 */
 	public function render($layout = '', $return = FALSE)
 	{
@@ -61,9 +67,10 @@ class Yall {
 	/**
 	 * Set layout variables
 	 *
-	 * @param  string  The variable name
-	 * @param  mixed   The variable value
-	 * @param  bool    If TRUE, encode HTML
+	 * @param   string
+	 * @param   mixed
+	 * @param   bool
+	 * @return  object
 	 */
 	public function set($name, $val, $encode = FALSE)
 	{
@@ -78,9 +85,10 @@ class Yall {
 	/**
 	 * Set layout partial
 	 *
-	 * @param  string  The variable name
-	 * @param  string  The view to load for content
-	 * @param  array   View data for the partial
+	 * @param   string
+	 * @param   string
+	 * @param   array
+	 * @return  object
 	 */
 	public function partial($name, $view, $data = array())
 	{
@@ -90,11 +98,12 @@ class Yall {
 	}
 	
 	/**
-	 * Set global variables to be used in any view
+	 * Set global variables to be used in both layout and child views
 	 *
-	 * @param  string  The variable name
-	 * @param  mixed   The variable value
-	 * @param  bool    If TRUE, encode HTML
+	 * @param   string
+	 * @param   mixed
+	 * @param   bool
+	 * @return  object
 	 */
 	public function set_global($name, $val, $encode = FALSE)
 	{

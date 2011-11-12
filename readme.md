@@ -1,18 +1,17 @@
-# Y'ALL - Yet Another Layout Library for CodeIgniter 2
+# Y'ALL - Yet Another Layout Library for CodeIgniter
 
 ## Requirements
 
-* CodeIgniter 2.0.x
+* CodeIgniter 2
+* [CodeIgniter Sparks](http://getsparks.org/)
 
-## Installation
+## Setup
 
-1. Download or `git clone` the files into `application/third_party/yall/`.
-2. Set your default layout in `application/third_party/config/yall.php`.
+1. [Install Sparks](http://getsparks.org/install) if you haven't done so already.
+2. Install the Y'ALL spark (see [here](http://getsparks.org/get-sparks) if you don't know how).
+3. **Optional:** Set your default layout in `config/yall.php`.
   * Default is `layouts/default`.
   * Depending on what you set, make sure that the files actually exist in your `application/views/` directory. For example, `layouts/default` maps to `application/views/layouts/default.php`.
-3. Do the following in `application/config/autoload.php`:
-  * Add `APPPATH.'third_party/yall'` to the `$autoload['packages']` array.
-  * Add `'yall'` to the `$autoload['libraries']` array.
 
 ## Usage
 
@@ -24,7 +23,7 @@ Example: `$this->yall->set('title', 'My Page Title');`
 
 ### set_global($name, $val, $encode = FALSE)
 
-Set a variable to be used in the layout **and** partials. Setting `$encode = TRUE` will pass the value through `htmlentities()`.
+Set a variable to be used in the layout _and_ partials (although you must call this **before** setting your partials). Setting `$encode = TRUE` will pass the value through `htmlentities()`.
 
 Example: `$this->yall->set_global('username', 'admin');`
 

@@ -1,0 +1,12 @@
+{
+    "name": "thed1360/yall",
+    "description": "Composer package for Y'all",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Diego Alejos",
+            "email": "lego.admin@gmail.com"
+        }
+    ],
+    "require": {}
+}

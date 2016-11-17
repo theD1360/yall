@@ -8,5 +8,8 @@
             "email": "lego.admin@gmail.com"
         }
     ],
+    "autoload": {
+        "classmap": ["libraries/"]
+    },
     "require": {}
 }

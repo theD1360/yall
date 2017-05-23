@@ -15,24 +15,24 @@
  * @license     http://www.opensource.org/licenses/mit-license.php MIT License
  */
 class Yall {
-	
+
 	/**
 	 * @var     object
 	 * @access  protected
 	 */
 	protected $CI;
-	
+
 	/**
 	 * @var     array
 	 * @access  protected
 	 */
 	protected $data = array();
-	
+
 	/**
 	 * @var  string
 	 */
 	public $layout = '';
-	
+
 	/**
 	 * Constructor
 	 *
@@ -41,14 +41,14 @@ class Yall {
 	public function __construct($config = array())
 	{
 		$this->CI =& get_instance();
-		
+
 		// setup config options
 		if( ! empty($config))
 		{
 			$this->layout = $config['default_layout'];
 		}
 	}
-	
+
 	/**
 	 * Render the layout
 	 *
@@ -60,10 +60,10 @@ class Yall {
 	{
 		// if layout is passed, use it instead of default
 		$layout = ( ! $layout) ? $this->layout : $layout;
-		
+
 		return $this->CI->load->view($layout, $this->data, $return);
 	}
-	
+
 	/**
 	 * Set layout variables
 	 *
@@ -76,12 +76,12 @@ class Yall {
 	{
 		// encode html if specified
 		$val = ($encode) ? htmlentities($val) : $val;
-		
+
 		$this->data[$name] = $val;
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * Set layout partial
 	 *
@@ -93,30 +93,49 @@ class Yall {
 	public function partial($name, $view, $data = array())
 	{
 		$this->data[$name] = $this->CI->load->view($view, $data, TRUE);
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * Set global variables to be used in both layout and child views
 	 *
-	 * @param   string
+	 * @param   string|array
 	 * @param   mixed
 	 * @param   bool
 	 * @return  object
 	 */
 	public function set_global($name, $val, $encode = FALSE)
 	{
+		// Check if a list/array was given
+		if (is_array($name) && empty($val) && empty($encode)) {
+			// Loop through and set multiple page vars
+			foreach ($name as $key => $value) {
+				$this->setPageVar($value[0], $value[1], $value[2]);
+			}
+		} else {
+			// Set single page var
+			$this->setPageVar($name, $val, $encode);
+		}
+
+		return $this;
+	}
+
+	/**
+	 * Helper Method
+	 *
+	 * @param string  $name
+	 * @param string  $val
+	 * @param boolean $encode
+	 */
+	public function setPageVar($name, $val, $encode)
+	{
 		// encode html if specified
 		$val = ($encode) ? htmlentities($val) : $val;
-		
+
 		$this->CI->load->vars(array(
 			$name => $val
 		));
-		
-		return $this;
 	}
-	
 }
-
 /* End of file yall.php */

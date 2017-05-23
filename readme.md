@@ -27,6 +27,16 @@ Set a variable to be used in the layout _and_ partials (although you must call t
 
 Example: `$this->yall->set_global('username', 'admin');`
 
+### *NEW* - set_global($array)
+
+Set a list or array of variables to be used in the layout. Setting `$encode = TRUE` will pass the value through `htmlentities()`.
+
+Example: `$this->yall->->set_global([
+              // [{name}, {value}, {encode}]
+              ['some_page_title', 'Hello World', false],
+              ['another_page_title', 'Yall package']
+          ]);`
+
 ### partial($name, $view, $data = array())
 
 Set a view to be used in the layout as a partial. `$data` is an array of variables to be sent to the view being called.

@@ -31,11 +31,14 @@ Example: `$this->yall->set_global('username', 'admin');`
 
 Set a list or array of variables to be used in the layout. Setting `$encode = TRUE` will pass the value through `htmlentities()`.
 
-Example: `$this->yall->->set_global([
-              // [{name}, {value}, {encode}]
-              ['some_page_title', 'Hello World', false],
-              ['another_page_title', 'Yall package']
-          ]);`
+Example:
+```php
+$this->yall->->set_global([
+    // [{name}, {value}, {encode}]
+    ['some_page_title', 'Hello World', false],
+    ['another_page_title', 'Yall package']
+]);
+```
 
 ### partial($name, $view, $data = array())
 
